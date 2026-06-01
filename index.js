@@ -191,3 +191,20 @@ firstGameContainer.appendChild(firstGameName);
 const secondGameName = document.createElement("p");
 secondGameName.innerHTML = secondGame.name;
 secondGameContainer.appendChild(secondGameName);
+
+// search field
+
+const searchInput = document.getElementById("search-field");
+
+searchInput.addEventListener("inout", () => {
+    deleteChildElements(gamesContainer);
+
+    const searchText = searchInput.ariaValueMax.toLocaleLowerCase();
+
+    const matchingGames = GAMES_JSON.filter ((game) => {
+        return game.name.toLowerCase().includes(searchText);
+    
+    });
+
+    addGamesToPage(matchingGames);
+});
