@@ -198,7 +198,7 @@ const searchInput = document.getElementById("search-field");
 searchInput.addEventListener("input", () => {
     deleteChildElements(gamesContainer);
 
-    const searchText = searchInput.ariaValueMax.toLocaleLowerCase();
+    const searchText = searchInput.value.toLowerCase();
 
     const matchingGames = GAMES_JSON.filter ((game) => {
         return game.name.toLowerCase().includes(searchText);
