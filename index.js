@@ -193,10 +193,9 @@ secondGameName.innerHTML = secondGame.name;
 secondGameContainer.appendChild(secondGameName);
 
 // search field
-
 const searchInput = document.getElementById("search-field");
 
-searchInput.addEventListener("inout", () => {
+searchInput.addEventListener("input", () => {
     deleteChildElements(gamesContainer);
 
     const searchText = searchInput.ariaValueMax.toLocaleLowerCase();
